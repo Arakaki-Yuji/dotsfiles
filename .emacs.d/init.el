@@ -15,7 +15,7 @@
              '("melpa" . "https://melpa.org/packages/") t)
 (package-initialize)
 
-(require 'cask "~/.cask/cask.el")
+(require 'cask "/usr/local/share/emacs/site-lisp/cask/cask.el")
 (cask-initialize)
 
 (add-to-list 'load-path "~/.emacs.d/elisp")
@@ -59,7 +59,7 @@
 ;; タイトルバーにファイルのフルパスを表示
 (setq frame-title-format "%f")
 ;; 時計を表示（好みに応じてフォーマットを変更可能）
-(setq display-time-day-and-date t); 曜日・月・日を表示
+(setq display-time-day-and-date t) ; 曜日・月・日を表示
 (display-time-mode t)
 
 ;; PAREN-MODE : 対応する括弧を強調して表示する
@@ -129,8 +129,8 @@
 (add-hook 'ruby-mode-hook
           '(lambda ()
             (inf-ruby-keys)))
-(require 'ruby-electric)
-(add-hook 'ruby-mode-hook '(lambda () (ruby-electric-mode t)))
+;; (require 'ruby-electric)
+;; (add-hook 'ruby-mode-hook '(lambda () (ruby-electric-mode t)))
 (setq ruby-indent-level 2)
 (setq ruby-indent-tabs-mode nil)
 
@@ -138,7 +138,7 @@
 
 ;; ;; setting for markdown-mode
 (add-to-list 'auto-mode-alist '("\\.md$" . gfm-mode))
-`
+
 ;; ;; Cask use lisp-mode
 (add-to-list 'auto-mode-alist '("Cask$" . lisp-mode))
 
@@ -177,15 +177,15 @@
 (add-to-list 'auto-mode-alist '("\\.html$" . web-mode))
 
 ;; ;; editorconfigを使用する
-(setq edconf-exec-path "/usr/local/bin/editorconfig")
-(editorconfig-mode 1)
+;; (setq edconf-exec-path "/usr/local/bin/editorconfig")
+;; (editorconfig-mode 1)
 
 ;; ;; emacsでrbenvでインストールしたrubyを扱うため
-(require 'rbenv)
-(setq rbenv-installation-dir "/usr/local/Cellar/rbenv")
-(global-rbenv-mode)
+;; (require 'rbenv)
+;; (setq rbenv-installation-dir "/usr/local/Cellar/rbenv")
+;; (global-rbenv-mode)
 
-(load-theme 'zenburn t)
+(load-theme 'misterioso t)
 
 ;; helmバッファでの選択行の色を設定
 (set-face-attribute 'helm-selection nil
