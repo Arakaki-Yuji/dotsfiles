@@ -38,9 +38,8 @@
 (setq font-lock-maximum-size 100)
 
 ;; macのcommand key をmeta keyとする
-(when (eq system-type 'darwin)
-  (setq ns-command-modifier (quote meta)))
-
+;;(when (eq system-type 'darwin)
+;;  (setq ns-command-modifier (quote meta)))
 ;; オリジナルのキーバインドを設定
 (global-set-key "\C-h" 'delete-backward-char)
 
@@ -178,7 +177,8 @@
 
 ;; ;; editorconfigを使用する
 ;; (setq edconf-exec-path "/usr/local/bin/editorconfig")
-;; (editorconfig-mode 1)
+(editorconfig-mode 1)
+(global-set-key (kbd "C-x a") 'editorconfig-apply)
 
 ;; ;; emacsでrbenvでインストールしたrubyを扱うため
 ;; (require 'rbenv)
@@ -246,7 +246,7 @@
 (global-set-key (kbd "C-c f") 'find-file-in-project)
 
 ;; ;; smartparensの設定
-(add-hook 'clojure-mode-hook #'smartparens-mode)
+(add-hook 'clojure-mode-hook #'smartparens-ode)
 (add-hook 'emacs-lisp-mode-hook #'smartparens-mode)
 (add-hook 'c-mode-hook #'smartparens-mode)
 
