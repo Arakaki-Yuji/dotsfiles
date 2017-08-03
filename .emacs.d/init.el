@@ -89,7 +89,7 @@
 
 
 ;;  tmux ,emacs , osx で クリップボードを共有する
- (defun copy-from-osx ()
+(defun copy-from-osx ()
   (shell-command-to-string "pbpaste"))
 (defun paste-to-osx (text &optional push)
   (let ((process-connection-type nil))
